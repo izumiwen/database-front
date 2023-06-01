@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/control.css">
+    <title>個人網頁</title>
 </head>
 <body>
-<header class="head"></header>
+
+
 <div class="avatar">
     <div class="w-24 rounded-full">
-        <img src="" />
+        <img src="./images/default.webp" />
     </div>
 </div>
 <div class="form-control w-full max-w-xs">
@@ -18,21 +21,25 @@
     </label>
     <input type="file" class="file-input file-input-bordered w-full max-w-xs" />
 </div>
-<div class="flex justify-evenly bg-Background">
+
+
+<div class="flex justify-evenly bg-[#0A2239]">
     <ul class="menu menu-horizontal bg-base-100 rounded-box p-2 ">
-        <li><a>主頁</a></li>
+        <li><a href="/database/public/index.html">主頁</a></li>
         <!-- tabindex will make the parent menu focusable to keep the submenu open if it's focused -->
         <li tabindex="0">
             <span>課程</span>
             <ul class="rounded-box bg-base-100 p-2 bg">
-                <li><a>課程大綱</a></li>
-                <li><a>課程影音</a></li>
-                <li><a>課程教材</a></li>
+                <li><a href="course_outline.html">課程大綱</a></li>
+                <li><a href="course_video.html">課程影音</a></li>
+                <li><a href="course_Textbook.html">課程教材</a></li>
             </ul>
         </li>
-        <li><a>獲獎紀錄</a></li>
-        <li><a>個人著作</a></li>
-        <li><a>個人經歷</a></li>
+        <li><a href="prize.html">獲獎紀錄</a></li>
+        <li><a href="book.html">個人著作</a></li>
+        <li><a href="experience.html">個人經歷</a></li>
+        <li><a href="periodical.html">期刊</a></li>
+        <li><a href="plan.html">計畫</a></li>
     </ul>
 </div>
 
@@ -46,7 +53,7 @@
         </div>
     </div>
 </div>
-<div class="flex justify-center">
+<div class="flex justify-center hidden" id="success-msg">
     <div class="w-2/3">
         <div class="flex justify-center alert alert-success shadow-lg">
             <div>
@@ -57,19 +64,18 @@
     </div>
 </div>
 
-
-<button class="btn btn-outline btn-success add" onclick="">新增</button>
+<button class="btn btn-outline btn-success" onclick="fadein()">新增</button>
 </body>
 <script>
-    var showButton = document.getElementById("btn btn-outline btn-success add");
-    var container = document.getElementById("flex justify-center alert alert-success shadow-lg");
+    function fadein(){
+        document.getElementById("success-msg").classList.remove("hidden");
+        document.getElementById("success-msg").classList.add("elementToFadeInAndOut");
 
-    showButton.addEventListener("click", function() {
-        container.classList.add("show-container");
-
-        setTimeout(function() {
-            container.classList.remove("show-container");
-        }, 3000);
-    });
+        setTimeout(()=> {
+            document.getElementById("success-msg").classList.add("hidden");
+            document.getElementById("success-msg").classList.remove("elementToFadeInAndOut")
+        },1500
+    )
+    }
 </script>
 </html>

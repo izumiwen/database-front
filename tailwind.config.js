@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./public/**/*.{html,js}"],
+
   themes: {
       theme: {
         "BackgroundColor": "#0A2239",
@@ -24,6 +25,7 @@ module.exports = {
         "error": "#F87272",
       },
     },
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui"),
+  require("tailwindcss-animated")]
 }
 
