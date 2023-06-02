@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/control.css">
 </head>
 <body>
-<input type ="button" onclick="javascript:location.href='/database/public/index.html'" value="回到首頁"></input>
+<div class="flex justify-evenly bg-[#0A2239]">
+    <ul class="menu menu-horizontal bg-base-100 rounded-box p-2 ">
+        <li><a href="/database/public/index.html">主頁</a></li>
+        <!-- tabindex will make the parent menu focusable to keep the submenu open if it's focused -->
+        <li tabindex="0">
+            <span>課程</span>
+            <ul class="rounded-box bg-base-100 p-2 bg">
+                <li><a href="course_outline.html">課程大綱</a></li>
+                <li><a href="course_video.html">課程影音</a></li>
+                <li><a href="course_Textbook.html">課程教材</a></li>
+            </ul>
+        </li>
+        <li><a href="prize.html">獲獎紀錄</a></li>
+        <li><a href="book.html">個人著作</a></li>
+        <li><a href="experience.html">個人經歷</a></li>
+        <li><a href="periodical.html">期刊</a></li>
+        <li><a href="plan.html">計畫</a></li>
+    </ul>
+</div>
 </body>
 </html>
